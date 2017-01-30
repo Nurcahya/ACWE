@@ -421,7 +421,7 @@ public class DBConnector {
         }
     }
       
-     public static void insertHasil(String epoch, String learning_rate, String hidden_layer, String momentum, String MSE, String waktu, String akurasi ) throws SQLException {
+     public static void insertHasil(String epoch, String learning_rate, String hidden_layer, String momentum, String MSE, String waktu, String presisi , String sensitivitas , String spesifisitas , String akurasi ) throws SQLException {
         Connection con = null;
         Statement exe = null;
         PreparedStatement pstmt = null;
@@ -435,11 +435,7 @@ public class DBConnector {
         }
         boolean berhasilinsert = false;
         try {     
-            
-//           String sql =  "INSERT INTO t_uji (`epoch`,`learn_rate`,`hid_layer`,`momentum`,`MSE`,`waktu`,`konvergensi`,`akurasi`)  VALUES('" + 
-//                                              epoch + "','"+ learning_rate +"','"+ hidden_layer +"','" + momentum + "','" + MSE + "','" + waktu + "','" + status + "','" + akurasi + "')";
-         String sql =  "INSERT INTO `thesis`.`t_uji` (`id_uji`, `epoch`, `learn_rate`, `hid_layer`, `momentum`, `MSE`, `waktu`, `presisi`, `sensitifitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '"+epoch+"', '"+learning_rate+"', '"+hidden_layer+"', '"+momentum+"', '"+MSE+"', '"+waktu+"', '', '', '', '"+akurasi+"')";
-          
+            String sql =  "INSERT INTO `thesis`.`t_uji` (`id_uji`, `epoch`, `learn_rate`, `hid_layer`, `momentum`, `MSE`, `waktu`, `presisi`, `sensitifitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '"+epoch+"', '"+learning_rate+"', '"+hidden_layer+"', '"+momentum+"', '"+MSE+"', '"+waktu+"', '"+presisi+"', '"+sensitivitas+"', '"+spesifisitas+"', '"+akurasi+"')";
             pstmt = con.prepareStatement(sql); 
             pstmt.executeUpdate();
             exe.executeQuery(sql);
@@ -447,8 +443,107 @@ public class DBConnector {
            } catch (SQLException ex) {
             berhasilinsert = false;
         }
-
+    }    
+     
+    public static void insertKelasHasilM1(double presisi , double sensitivitas , double spesifisitas , double akurasi ) throws SQLException {
+        Connection con = null;
+        Statement exe = null;
+        PreparedStatement pstmt = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String data = "jdbc:mysql://localhost:3306/thesis";
+            con = DriverManager.getConnection(data, "root", "");
+            exe = con.createStatement();  
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        boolean berhasilinsert = false;
+        boolean berhasilupdate = false;
+        try {     
+            String sql = "SELECT max(id_uji) as id_uji FROM `t_uji`";
+            ResultSet rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                int id_uji= rs.getInt("id_uji");
+                String sql1 =  "INSERT INTO `thesis`.`t_pa_m1` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '"+id_uji+"', '"+presisi+"', '"+sensitivitas+"', '"+spesifisitas+"', '"+akurasi+"')";
+                pstmt = con.prepareStatement(sql1); 
+                pstmt.executeUpdate();
+                exe.executeQuery(sql1);
+                berhasilinsert = true;
+            }      
+            berhasilupdate = true;
+        } catch (SQLException ex) {
+            berhasilinsert = false;
+        } finally {
+            pstmt.close();
+            con.close();
+        }
     }
-       
-      
+    
+    public static void insertKelasHasilM2(double presisi , double sensitivitas , double spesifisitas , double akurasi ) throws SQLException {
+        Connection con = null;
+        Statement exe = null;
+        PreparedStatement pstmt = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String data = "jdbc:mysql://localhost:3306/thesis";
+            con = DriverManager.getConnection(data, "root", "");
+            exe = con.createStatement();  
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        boolean berhasilinsert = false;
+        boolean berhasilupdate = false;
+        try {     
+            String sql = "SELECT max(id_uji) as id_uji FROM `t_uji`";
+            ResultSet rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                int id_uji= rs.getInt("id_uji");
+                String sql1 =  "INSERT INTO `thesis`.`t_pa_m2` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '"+id_uji+"', '"+presisi+"', '"+sensitivitas+"', '"+spesifisitas+"', '"+akurasi+"')";
+                pstmt = con.prepareStatement(sql1); 
+                pstmt.executeUpdate();
+                exe.executeQuery(sql1);
+                berhasilinsert = true;
+            }      
+            berhasilupdate = true;
+        } catch (SQLException ex) {
+            berhasilinsert = false;
+        } finally {
+            pstmt.close();
+            con.close();
+        }
+    }
+    
+    public static void insertKelasHasilM3(double presisi , double sensitivitas , double spesifisitas , double akurasi ) throws SQLException {
+        Connection con = null;
+        Statement exe = null;
+        PreparedStatement pstmt = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String data = "jdbc:mysql://localhost:3306/thesis";
+            con = DriverManager.getConnection(data, "root", "");
+            exe = con.createStatement();  
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        boolean berhasilinsert = false;
+        boolean berhasilupdate = false;
+        try {     
+            String sql = "SELECT max(id_uji) as id_uji FROM `t_uji`";
+            ResultSet rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                int id_uji= rs.getInt("id_uji");
+                String sql1 =  "INSERT INTO `thesis`.`t_pa_m3` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '"+id_uji+"', '"+presisi+"', '"+sensitivitas+"', '"+spesifisitas+"', '"+akurasi+"')";
+                pstmt = con.prepareStatement(sql1); 
+                pstmt.executeUpdate();
+                exe.executeQuery(sql1);
+                berhasilinsert = true;
+            }      
+            berhasilupdate = true;
+        } catch (SQLException ex) {
+            berhasilinsert = false;
+        } finally {
+            pstmt.close();
+            con.close();
+        }
+    }
 }

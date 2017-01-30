@@ -826,7 +826,7 @@ public int indexnama=1;
                                         .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addComponent(jLabel78)
                                     .addComponent(jLabel79))
-                                .addGap(0, 12, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -888,42 +888,42 @@ public int indexnama=1;
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel40)
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel97)
-                            .addComponent(jLabel96)))
+                        .addGap(0, 62, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel75)
-                                    .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel76)
-                                        .addComponent(jLabel77)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel75)
+                                .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel47)
-                                    .addComponent(jLabel41))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel94)
-                                    .addComponent(jLabel95))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jLabel76)
+                                    .addComponent(jLabel77)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel41)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel94)))
+                        .addGap(32, 32, 32)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel84)
-                                        .addComponent(jLabel83))
-                                    .addComponent(jLabel98, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addComponent(jLabel99)
-                                .addComponent(jLabel100))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel101)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(28, 28, 28))
+                                .addComponent(jLabel83)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel96)
+                                .addGap(0, 28, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel98)
+                                    .addComponent(jLabel99)
+                                    .addComponent(jLabel100)
+                                    .addComponent(jLabel101))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel47)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel95)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel84)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel97)
+                        .addGap(27, 27, 27))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1841,8 +1841,8 @@ public int indexnama=1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
+    public static javax.swing.JLabel jLabel100;
+    public static javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1924,22 +1924,22 @@ public int indexnama=1;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
+    public static javax.swing.JLabel jLabel85;
+    public static javax.swing.JLabel jLabel86;
+    public static javax.swing.JLabel jLabel87;
+    public static javax.swing.JLabel jLabel88;
+    public static javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
+    public static javax.swing.JLabel jLabel90;
+    public static javax.swing.JLabel jLabel91;
+    public static javax.swing.JLabel jLabel92;
+    public static javax.swing.JLabel jLabel93;
+    public static javax.swing.JLabel jLabel94;
+    public static javax.swing.JLabel jLabel95;
+    public static javax.swing.JLabel jLabel96;
+    public static javax.swing.JLabel jLabel97;
+    public static javax.swing.JLabel jLabel98;
+    public static javax.swing.JLabel jLabel99;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -1975,7 +1975,7 @@ public int indexnama=1;
     private javax.swing.JTable tabelHasil;
     private javax.swing.JTable tabelPelatihan;
     private javax.swing.JTable tabelPengujian;
-    private javax.swing.JTable tabelPengujian1;
+    public static javax.swing.JTable tabelPengujian1;
     private javax.swing.JTable tabelPengujian2;
     // End of variables declaration//GEN-END:variables
 }

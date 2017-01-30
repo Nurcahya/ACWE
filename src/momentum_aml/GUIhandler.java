@@ -219,10 +219,6 @@ public static void scanDataHasil(String x) {
                 j = 0;
             }
         }
-         GUI.jLabel43.setText(": "+Integer.toString(j1+j2+j3));
-         GUI.jLabel44.setText(": "+Integer.toString(j1));
-         GUI.jLabel45.setText(": "+Integer.toString(j2));
-         GUI.jLabel46.setText(": "+Integer.toString(j3));
       }
       else if (flagUji==2){
         int k = 0;
@@ -339,9 +335,9 @@ public static void scanDataHasil(String x) {
         } else if (ev.getSource() == btnUji) {
             if (flagUji==1 && flagLatih==3){
          DecimalFormat df = new DecimalFormat("####0.000");    
-         GUI.jLabel52.setText(": 0");
-         GUI.jLabel53.setText(": 0");
-         GUI.jLabel49.setText(": "+String.valueOf(df.format(GUILatihUji.memorisasi))+ "%");
+//         GUI.jLabel52.setText(": 0");
+//         GUI.jLabel53.setText(": 0");
+//         GUI.jLabel49.setText(": "+String.valueOf(df.format(GUILatihUji.memorisasi))+ "%");
          
             String a = fLearnRate.getText();
             String b = fHiddenLayer.getText();
@@ -350,8 +346,11 @@ public static void scanDataHasil(String x) {
             String e = fMomentum.getText();   
          
             try {
-                DBConnector.insertHasil(c, a, b, e, GUILatihUji.tampilerror, String.valueOf(df.format(GUILatihUji.hasil)), String.valueOf(df.format(GUILatihUji.memorisasi)));
-                                            
+                DBConnector.insertHasil(c, a, b, e, GUILatihUji.tampilerror, String.valueOf(df.format(GUILatihUji.hasil)), String.valueOf(df.format(GUILatihUji.totpres)), String.valueOf(df.format(GUILatihUji.totsens)), String.valueOf(df.format(GUILatihUji.totspes)), String.valueOf(df.format(GUILatihUji.totacc)));
+                DBConnector.insertKelasHasilM1(GUILatihUji.pres1,GUILatihUji.sens1,GUILatihUji.spes1,GUILatihUji.acc1);
+                DBConnector.insertKelasHasilM2(GUILatihUji.pres2,GUILatihUji.sens2,GUILatihUji.spes2,GUILatihUji.acc2);
+                DBConnector.insertKelasHasilM3(GUILatihUji.pres3,GUILatihUji.sens3,GUILatihUji.spes3,GUILatihUji.acc3);
+                
             } catch (SQLException ex) {
                 Logger.getLogger(GUIhandler.class.getName()).log(Level.SEVERE, null, ex);
             }

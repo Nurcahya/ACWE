@@ -29,6 +29,10 @@ public class GUILatihUji {
     public static double hasil;
     public static int jmlg;
     public static double err;
+    public static double pres1, sens1, spes1, acc1;
+    public static double pres2, sens2, spes2, acc2;
+    public static double pres3, sens3, spes3, acc3;
+    public static double totpres, totsens, totspes, totacc;
     public static String stat;
     public static String tampilerror;
 
@@ -412,20 +416,78 @@ public class GUILatihUji {
         err = (error1+error2+error3)/3;
         System.out.println("Nilai MSE : "+err);
         DecimalFormat desimal = new DecimalFormat("####0.00000000"); 
-        tampilerror=String.valueOf(desimal.format(err));
-       
+        tampilerror=String.valueOf(desimal.format(err));        
+        
+        if(TP1+FP1==0) pres1= 0;
+        else pres1= (double)TP1/((double)TP1+(double)FP1)*100;
+        if(TP1+FP1==0) sens1=0;
+        else sens1= (double)TP1/((double)TP1+(double)FN1)*100;
+        if(TN1+FP1==0) spes1=0;
+        else spes1= (double)TN1/((double)TN1+(double)FP1)*100;
+        if(TP1+TN1+FP1+FN1==0) acc1=0;
+        else acc1= ((double)TP1+(double)TN1)/((double)TP1+(double)TN1+(double)FP1+(double)FN1)*100;
+        
+        if(TP2+FP2==0) pres2= 0;
+        else pres2=(double)TP2/((double)TP2+(double)FP2)*100;
+        if(TP2+FP2==0) sens2=0;
+        else sens2= (double)TP2/((double)TP2+(double)FN2)*100;
+        if(TN2+FP2==0) spes2=0;
+        else spes2= (double)TN2/((double)TN2+(double)FP2)*100;
+        if(TP2+TN2+FP2+FN2==0) acc2=0;
+        else acc2= ((double)TP2+(double)TN2)/((double)TP2+(double)TN2+(double)FP2+(double)FN2)*100;
+        
+        if(TP3+FP3==0) pres3= 0;
+        else pres3= (double)TP3/((double)TP3+(double)FP3)*100;
+        if(TP3+FP3==0) sens3=0;
+        else sens3= (double)TP3/((double)TP3+(double)FN3)*100;
+        if(TN3+FP3==0) spes3=0;
+        else spes3= (double)TN3/((double)TN3+(double)FP3)*100;
+        if(TP3+TN3+FP3+FN3==0) acc3=0;
+        else acc3= ((double)TP3+(double)TN3)/((double)TP3+(double)TN3+(double)FP3+(double)FN3)*100;
+        
+        
+        totpres= (pres1+pres2+pres3)/3;
+        totsens= (sens1+sens2+sens3)/3;
+        totspes= (spes1+spes2+spes3)/3;
+        totacc= (acc1+acc2+acc3)/3;
+        
+        
+        System.out.println("Nilai Rata Presisi : "+totpres);
+        System.out.println("Nilai Rata Sensitivitas : : "+totsens);
+        System.out.println("Nilai Rata Spesifisitas : "+totspes);
+        System.out.println("Nilai Rata Akurasi : "+totacc);
+        
         GUI.jLabel32.setText(": "+tampilerror);
-         
-         
-         System.out.println(jmlmemo1);
-         System.out.println(jmlmemo2);
-         System.out.println(jmlmemo3);
-         System.out.println(jml);
-         jmlmemo = jmlmemo1+jmlmemo2+jmlmemo3;
-         memorisasi = (double)jmlmemo/(double)jml * 100;
+        GUI.jLabel43.setText(": "+TP1);
+        GUI.jLabel44.setText(": "+TN1);
+        GUI.jLabel45.setText(": "+FP1);
+        GUI.jLabel46.setText(": "+FN1);
+        GUI.jLabel86.setText(": "+TP2);
+        GUI.jLabel87.setText(": "+TN2);
+        GUI.jLabel88.setText(": "+FP2);
+        GUI.jLabel89.setText(": "+FN2);
+        GUI.jLabel94.setText(": "+TP3);
+        GUI.jLabel95.setText(": "+TN3);
+        GUI.jLabel96.setText(": "+FP3);
+        GUI.jLabel97.setText(": "+FN3);
+        
+        GUI.jLabel52.setText(": "+String.valueOf(df.format(pres1)));
+        GUI.jLabel53.setText(": "+String.valueOf(df.format(sens1)));
+        GUI.jLabel49.setText(": "+String.valueOf(df.format(spes1)));
+        GUI.jLabel85.setText(": "+String.valueOf(df.format(acc1)));
+        
+        GUI.jLabel90.setText(": "+String.valueOf(df.format(pres2)));
+        GUI.jLabel91.setText(": "+String.valueOf(df.format(sens2)));
+        GUI.jLabel92.setText(": "+String.valueOf(df.format(spes2)));
+        GUI.jLabel93.setText(": "+String.valueOf(df.format(acc2)));
+        
+        GUI.jLabel98.setText(": "+String.valueOf(df.format(pres3)));
+        GUI.jLabel99.setText(": "+String.valueOf(df.format(sens3)));
+        GUI.jLabel100.setText(": "+String.valueOf(df.format(spes3)));
+        GUI.jLabel101.setText(": "+String.valueOf(df.format(acc3)));
+                 
          
          JOptionPane.showMessageDialog(null, "Proses pelatihan telah selesai", "InfoBox ", JOptionPane.INFORMATION_MESSAGE);
 	 System.out.println("Pelatihan Selesai!");
-         System.out.println(memorisasi); 
         }
 }
