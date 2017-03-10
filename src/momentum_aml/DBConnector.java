@@ -340,9 +340,10 @@ public class DBConnector {
                 ResultSet rs3 = exe.executeQuery(sql3);
                 while (rs3.next()) {
 //                int nomor = rs2.getInt("id_objek");   
-                    char aml1 = '0';
-                    char aml2 = '0';
-                    char aml3 = '0';
+                    char tipe1 = '0';
+                    char tipe2 = '0';
+                    char tipe3 = '0';
+                    char tipe4 = '0';
                     String nama_objek = rs3.getString("nama_objek");
                     String nama_citra = rs3.getString("nama_citra");
                     double normarea = (rs3.getDouble("area") - minarea) / (maxarea - minarea);
@@ -353,17 +354,19 @@ public class DBConnector {
                     double normstdev = (rs3.getDouble("st_dev") - minstdev) / (maxstdev - minstdev);
                     String jenis = rs3.getString("jenis");
                     String tipe = rs3.getString("tipe_sel");
-                    if (jenis.equals("M1")) {
-                        aml1 = '1';
-                    } else if (jenis.equals("M2")) {
-                        aml2 = '1';
-                    } else if (jenis.equals("M3")) {
-                        aml3 = '1';
+                    if (tipe.equals("myeloblast")) {
+                        tipe1 = '1';
+                    } else if (tipe.equals("promyelosit")) {
+                        tipe2 = '1';
+                    } else if (tipe.equals("monosit")) {
+                        tipe3 = '1';
+                    } else if (tipe.equals("non-blast")) {
+                        tipe4 = '1';
                     }
 
                     int fold = ThreadLocalRandom.current().nextInt(1, 3 + 1);
-                    String sql4 = "INSERT INTO t_citra_norm (`nama_objek`, `nama_citra`, `area`, `tepi`, `kebundaran`, `rasio`, `mean`, `st_dev`, `jenis`, `aml1`, `aml2`, `aml3`, `fold`, `tipe_sel`)  VALUES('"
-                            + nama_objek + "','" + nama_citra + "','" + normarea + "','" + normtepi + "','" + normkebundaran + "','" + normrasio + "','" + normmean + "','" + normstdev + "','" + jenis + "','" + aml1 + "','" + aml2 + "','" + aml3 + "','" + fold + "','" + tipe + "')";
+                    String sql4 = "INSERT INTO t_citra_norm (`nama_objek`, `nama_citra`, `area`, `tepi`, `kebundaran`, `rasio`, `mean`, `st_dev`, `jenis`, `myeloblast`, `promyelosit`, `monosit`, `non-blast`, `fold`, `tipe_sel`)  VALUES('"
+                            + nama_objek + "','" + nama_citra + "','" + normarea + "','" + normtepi + "','" + normkebundaran + "','" + normrasio + "','" + normmean + "','" + normstdev + "','" + jenis + "','" + tipe1 + "','" + tipe2 + "','" + tipe3 + "','" + tipe4 + "','" + fold + "','" + tipe + "')";
 
                     pstmt = con.prepareStatement(sql4);
                     pstmt.executeUpdate();
