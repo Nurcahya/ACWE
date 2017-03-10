@@ -161,9 +161,10 @@ public class DBConnector {
                         + rs.getString("rasio") + "$*$"
                         + rs.getString("mean") + "$*$"
                         + rs.getString("st_dev") + "$*$"
-                        + rs.getString("aml1") + "$*$"
-                        + rs.getString("aml2") + "$*$"
-                        + rs.getString("aml3") + "$*$"
+                        + rs.getString("myeloblast") + "$*$"
+                        + rs.getString("promyelosit") + "$*$"
+                        + rs.getString("monosit") + "$*$"
+                        + rs.getString("non-blast") + "$*$"
                         + rs.getString("jenis") + "$*$"
                         + rs.getString("nama_objek") + "$*$"
                         + rs.getString("nama_citra") + "$*$"
@@ -205,7 +206,7 @@ public class DBConnector {
                         + rs.getString("rasio") + "$*$"
                         + rs.getString("mean") + "$*$"
                         + rs.getString("st_dev") + "$*$"
-                        + rs.getString("jenis") + "$*$"
+                        + rs.getString("tipe_sel") + "$*$"
                         + rs.getString("fold") + "$*$";
             }
         } catch (Exception e) {
@@ -241,7 +242,7 @@ public class DBConnector {
                         + rs.getString("rasio") + "$*$"
                         + rs.getString("mean") + "$*$"
                         + rs.getString("st_dev") + "$*$"
-                        + rs.getString("jenis") + "$*$"
+                        + rs.getString("tipe_sel") + "$*$"
                         + rs.getString("fold") + "$*$"
                         + rs.getString("hasil") + "$*$";
                 ;
@@ -396,7 +397,7 @@ public class DBConnector {
             ResultSet rs = exe.executeQuery(sql);
             while (rs.next()) {
                 int iduji = rs.getInt("id_uji") + 1;
-                String sql2 = "INSERT INTO `thesis_ugm`.`t_hasil` (`id_objek`, `id_uji`, `jenis`, `hasil`) VALUES ('" + id_objek + "', '" + Integer.toString(iduji) + "', '" + jenis + "', '" + jenis_testing + "')";
+                String sql2 = "INSERT INTO `thesis_ugm`.`t_hasil` (`id_objek`, `id_uji`, `tipe_sel`, `hasil`) VALUES ('" + id_objek + "', '" + Integer.toString(iduji) + "', '" + jenis + "', '" + jenis_testing + "')";
                 pstmt = con.prepareStatement(sql2);
                 pstmt.executeUpdate();
                 exe.executeQuery(sql2);
@@ -434,7 +435,7 @@ public class DBConnector {
         }
     }
 
-    public static void insertKelasHasilM1(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
+    public static void insertKelasHasilMyel(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
         Connection con = null;
         Statement exe = null;
         PreparedStatement pstmt = null;
@@ -453,7 +454,7 @@ public class DBConnector {
             ResultSet rs = exe.executeQuery(sql);
             while (rs.next()) {
                 int id_uji = rs.getInt("id_uji");
-                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_m1` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
+                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_myel` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
                 pstmt = con.prepareStatement(sql1);
                 pstmt.executeUpdate();
                 exe.executeQuery(sql1);
@@ -468,7 +469,7 @@ public class DBConnector {
         }
     }
 
-    public static void insertKelasHasilM2(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
+    public static void insertKelasHasilPro(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
         Connection con = null;
         Statement exe = null;
         PreparedStatement pstmt = null;
@@ -487,7 +488,7 @@ public class DBConnector {
             ResultSet rs = exe.executeQuery(sql);
             while (rs.next()) {
                 int id_uji = rs.getInt("id_uji");
-                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_m2` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
+                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_pro` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
                 pstmt = con.prepareStatement(sql1);
                 pstmt.executeUpdate();
                 exe.executeQuery(sql1);
@@ -502,7 +503,7 @@ public class DBConnector {
         }
     }
 
-    public static void insertKelasHasilM3(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
+    public static void insertKelasHasilMono(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
         Connection con = null;
         Statement exe = null;
         PreparedStatement pstmt = null;
@@ -521,7 +522,40 @@ public class DBConnector {
             ResultSet rs = exe.executeQuery(sql);
             while (rs.next()) {
                 int id_uji = rs.getInt("id_uji");
-                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_m3` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
+                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_mono` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
+                pstmt = con.prepareStatement(sql1);
+                pstmt.executeUpdate();
+                exe.executeQuery(sql1);
+                berhasilinsert = true;
+            }
+            berhasilupdate = true;
+        } catch (SQLException ex) {
+            berhasilinsert = false;
+        } finally {
+            pstmt.close();
+            con.close();
+        }
+    }
+    public static void insertKelasHasilNon(double presisi, double sensitivitas, double spesifisitas, double akurasi) throws SQLException {
+        Connection con = null;
+        Statement exe = null;
+        PreparedStatement pstmt = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String data = "jdbc:mysql://localhost:3306/thesis_ugm";
+            con = DriverManager.getConnection(data, "root", "");
+            exe = con.createStatement();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        boolean berhasilinsert = false;
+        boolean berhasilupdate = false;
+        try {
+            String sql = "SELECT max(id_uji) as id_uji FROM `t_uji`";
+            ResultSet rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                int id_uji = rs.getInt("id_uji");
+                String sql1 = "INSERT INTO `thesis_ugm`.`t_pa_non` (`id_PA`, `id_uji`, `presisi`, `sensitivitas`, `spesifisitas`, `akurasi`) VALUES (NULL, '" + id_uji + "', '" + presisi + "', '" + sensitivitas + "', '" + spesifisitas + "', '" + akurasi + "')";
                 pstmt = con.prepareStatement(sql1);
                 pstmt.executeUpdate();
                 exe.executeQuery(sql1);

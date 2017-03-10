@@ -37,7 +37,7 @@ public class GUIhandler implements ActionListener {
     private JTable tabelPelatihan;
     private JTable tabelPengujian;
     private JTable tabelHasil;
-    private JLabel jLabel23, jLabel24, jLabel25, jLabel26, jLabel27, jLabel28, jLabel31;
+    private JLabel jLabel23, jLabel24, jLabel25, jLabel26, jLabel27, jLabel28, jLabel31, jLabel102, jLabel103, jLabel104, jLabel105;
     private JTextField fHiddenLayer, fLearnRate, fMaxEpoch, fToleransi, fMomentum;
     private JButton btnLoadLatih, btnLoadUji, btnLatih, btnUji, btnNorm;
     private DefaultTableModel tabMode;
@@ -50,7 +50,7 @@ public class GUIhandler implements ActionListener {
     public GUIhandler(JTable tabelPelatihan, JTable tabelPengujian, JTable tabelPengujian1, JTable tabelPengujian2, JTable tabelHasil,
             JButton btnLoadLatih, JButton btnLatih, JButton btnLoadUji, JButton btnUji, JButton btnNorm,
             JTextField fHiddenLayer, JTextField fLearnRate, JTextField fMaxEpoch, JTextField fToleransi, JTextField fMomentum,
-            JLabel jLabel23, JLabel jLabel24, JLabel jLabel25, JLabel jLabel26, JLabel jLabel31) {
+            JLabel jLabel23, JLabel jLabel24, JLabel jLabel25, JLabel jLabel26, JLabel jLabel102, JLabel jLabel103, JLabel jLabel104, JLabel jLabel105, JLabel jLabel31) {
         this.tabelPelatihan = tabelPelatihan;
         this.tabelHasil = tabelHasil;
         this.btnLoadLatih = btnLoadLatih;
@@ -70,6 +70,10 @@ public class GUIhandler implements ActionListener {
         this.jLabel27 = jLabel27;
         this.jLabel28 = jLabel28;
         this.jLabel31 = jLabel31;
+        this.jLabel102 = jLabel102;
+        this.jLabel103 = jLabel103;
+        this.jLabel104 = jLabel104;
+        this.jLabel105 = jLabel105;
         tabMode = (DefaultTableModel) tabelPelatihan.getModel();
         tabMode2 = (DefaultTableModel) tabelPengujian.getModel();
         tabMode4 = (DefaultTableModel) tabelPengujian1.getModel();
@@ -112,6 +116,7 @@ public class GUIhandler implements ActionListener {
             int k = 0;
             int j = 0;
             int j1 = 0, j2 = 0, j3 = 0;
+            int t1 = 0, t2 = 0, t3 = 0, t4 = 0;
             StringTokenizer st = new StringTokenizer(x, "$*$");
             while (st.hasMoreTokens()) {
                 dataLatih[j] = (String) st.nextElement();
@@ -137,6 +142,18 @@ public class GUIhandler implements ActionListener {
                     } else if (Jenis.equals("M3")) {
                         j3++;
                     }
+                    
+                    
+                    if (Tipe.equals("myeloblast")) {
+                        t1++;
+                    } else if (Tipe.equals("promyelosit")) {
+                        t2++;
+                    } else if (Tipe.equals("monosit")) {
+                        t3++;
+                    } else if (Tipe.equals("non-blast")) {
+                        t4++;
+                    }
+                    
 
                     String data[] = {No, Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Jenis, Tipe};
                     tabMode.addRow(data);
@@ -147,6 +164,10 @@ public class GUIhandler implements ActionListener {
             jLabel24.setText(": " + Integer.toString(j1));
             jLabel25.setText(": " + Integer.toString(j2));
             jLabel26.setText(": " + Integer.toString(j3));
+            jLabel102.setText(": " + Integer.toString(t1));
+            jLabel103.setText(": " + Integer.toString(t2));
+            jLabel104.setText(": " + Integer.toString(t3));
+            jLabel105.setText(": " + Integer.toString(t4));
 
         } else if (flagLatih == 2) {
             int k = 0;
@@ -182,7 +203,7 @@ public class GUIhandler implements ActionListener {
             int k = 0;
             int j = 0;
             int no1 = 0, no2 = 0, no3 = 0;
-            int j1 = 0, j2 = 0, j3 = 0;
+            int t1 = 0, t2 = 0, t3 = 0, t4 = 0;
             StringTokenizer st = new StringTokenizer(x, "$*$");
             while (st.hasMoreTokens()) {
                 dataUji[j] = (String) st.nextElement();
@@ -197,28 +218,30 @@ public class GUIhandler implements ActionListener {
                     String Rasio = (dataUji[5]);
                     String Mean = (dataUji[6]);
                     String Stdev = (dataUji[7]);
-                    String Jenis = (dataUji[8]);
+                    String Tipe = (dataUji[8]);
                     String Fold = (dataUji[9]);
                     String Jenis_hasil = "Undefined";
-                    if (Jenis.equals("M1")) {
-                        j1++;
-                    } else if (Jenis.equals("M2")) {
-                        j2++;
-                    } else if (Jenis.equals("M3")) {
-                        j3++;
+                     if (Tipe.equals("myeloblast")) {
+                        t1++;
+                    } else if (Tipe.equals("promyelosit")) {
+                        t2++;
+                    } else if (Tipe.equals("monosit")) {
+                        t3++;
+                    } else if (Tipe.equals("non-blast")) {
+                        t4++;
                     }
 
                     if ("1".equals(Fold)) {
                         no1 = no1 + 1;
-                        String data1[] = {Integer.toString(no1), Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Jenis, Jenis_hasil};
+                        String data1[] = {Integer.toString(no1), Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Tipe, Jenis_hasil};
                         tabMode2.addRow(data1);
                     } else if ("2".equals(Fold)) {
                         no2 = no2 + 1;
-                        String data2[] = {Integer.toString(no2), Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Jenis, Jenis_hasil};
+                        String data2[] = {Integer.toString(no2), Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Tipe, Jenis_hasil};
                         tabMode4.addRow(data2);
                     } else if ("3".equals(Fold)) {
                         no3 = no3 + 1;
-                        String data3[] = {Integer.toString(no3), Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Jenis, Jenis_hasil};
+                        String data3[] = {Integer.toString(no3), Objek, Nama, Area, Tepi, Kebundaran, Rasio, Mean, Stdev, Tipe, Jenis_hasil};
                         tabMode5.addRow(data3);
                     }
                     j = 0;
@@ -329,9 +352,6 @@ public class GUIhandler implements ActionListener {
         } else if (ev.getSource() == btnUji) {
             if (flagUji == 1 && flagLatih == 3) {
                 DecimalFormat df = new DecimalFormat("####0.000");
-//         GUI.jLabel52.setText(": 0");
-//         GUI.jLabel53.setText(": 0");
-//         GUI.jLabel49.setText(": "+String.valueOf(df.format(GUILatihUji.memorisasi))+ "%");
 
                 String a = fLearnRate.getText();
                 String b = fHiddenLayer.getText();
@@ -341,10 +361,10 @@ public class GUIhandler implements ActionListener {
 
                 try {
                     DBConnector.insertHasil(c, a, b, e, GUILatihUji.tampilerror, String.valueOf(df.format(GUILatihUji.hasil)), String.valueOf(df.format(GUILatihUji.totpres)), String.valueOf(df.format(GUILatihUji.totsens)), String.valueOf(df.format(GUILatihUji.totspes)), String.valueOf(df.format(GUILatihUji.totacc)));
-                    DBConnector.insertKelasHasilM1(GUILatihUji.pres1, GUILatihUji.sens1, GUILatihUji.spes1, GUILatihUji.acc1);
-                    DBConnector.insertKelasHasilM2(GUILatihUji.pres2, GUILatihUji.sens2, GUILatihUji.spes2, GUILatihUji.acc2);
-                    DBConnector.insertKelasHasilM3(GUILatihUji.pres3, GUILatihUji.sens3, GUILatihUji.spes3, GUILatihUji.acc3);
-
+                    DBConnector.insertKelasHasilMyel(GUILatihUji.pres1, GUILatihUji.sens1, GUILatihUji.spes1, GUILatihUji.acc1);
+                    DBConnector.insertKelasHasilPro(GUILatihUji.pres2, GUILatihUji.sens2, GUILatihUji.spes2, GUILatihUji.acc2);
+                    DBConnector.insertKelasHasilMono(GUILatihUji.pres3, GUILatihUji.sens3, GUILatihUji.spes3, GUILatihUji.acc3);
+                    DBConnector.insertKelasHasilNon(GUILatihUji.pres4, GUILatihUji.sens4, GUILatihUji.spes4, GUILatihUji.acc4);
                 } catch (SQLException ex) {
                     Logger.getLogger(GUIhandler.class.getName()).log(Level.SEVERE, null, ex);
                 }
