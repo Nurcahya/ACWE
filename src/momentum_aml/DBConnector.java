@@ -569,4 +569,106 @@ public class DBConnector {
             con.close();
         }
     }
+    
+       public static String matrix(String id) {
+        Connection con = null;
+        Statement exe = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String data = "jdbc:mysql://localhost:3306/thesis_ugm";
+            con = DriverManager.getConnection(data, "root", "");
+            exe = con.createStatement();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String data = "";
+        try {
+            String sql = "SELECT count(tipe_sel) as A from t_hasil where tipe_sel='myeloblast' and hasil='myeloblast' and id_uji='"+id+"'";
+            ResultSet rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("A") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as B from t_hasil where tipe_sel='myeloblast' and hasil='promyelosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("B") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as C from t_hasil where tipe_sel='myeloblast' and hasil='monosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("C") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as D from t_hasil where tipe_sel='myeloblast' and hasil='non-blast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("D") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as E from t_hasil where tipe_sel='promyelosit' and hasil='myeloblast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("E") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as F from t_hasil where tipe_sel='promyelosit' and hasil='promyelosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("F") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as G from t_hasil where tipe_sel='promyelosit' and hasil='monosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("G") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as H from t_hasil where tipe_sel='promyelosit' and hasil='non-blast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("H") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as I from t_hasil where tipe_sel='monosit' and hasil='myeloblast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("I") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as J from t_hasil where tipe_sel='monosit' and hasil='promyelosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("J") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as K from t_hasil where tipe_sel='monosit' and hasil='monosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("K") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as L from t_hasil where tipe_sel='monosit' and hasil='non-blast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("L") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as M from t_hasil where tipe_sel='non-blast' and hasil='myeloblast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("M") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as N from t_hasil where tipe_sel='non-blast' and hasil='promyelosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("N") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as O from t_hasil where tipe_sel='non-blast' and hasil='monosit' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("O") + "$*$";
+            }
+            sql = "SELECT count(tipe_sel) as P from t_hasil where tipe_sel='non-blast' and hasil='non-blast' and id_uji='"+id+"'";
+            rs = exe.executeQuery(sql);
+            while (rs.next()) {
+                data = data + rs.getString("P") + "$*$";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+    
+    
 }

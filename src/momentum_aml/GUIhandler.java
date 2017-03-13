@@ -30,6 +30,7 @@ public class GUIhandler implements ActionListener {
     static String[] dataUji = new String[10];
     static String[] dataUjiHasil = new String[11];
     static String[] dataHasil = new String[9];
+    static String[] dataMatrix = new String[16];
     int flagLatih;
     int flagUji;
     static int b, c;
@@ -82,6 +83,55 @@ public class GUIhandler implements ActionListener {
         setLebarRowAL();
     }
 
+    public static void scanMatrix(String x) {
+        int j = 0;
+        String A1 = null, B1= null, C1= null, D1= null;
+        String A2 = null, B2= null, C2= null, D2= null;
+        String A3 = null, B3= null, C3= null, D3= null;
+        String A4 = null, B4= null, C4= null, D4= null;
+        StringTokenizer st = new StringTokenizer(x, "$*$");
+        while (st.hasMoreTokens()) {
+            dataMatrix[j] = (String) st.nextElement();
+            j++;
+            if (j == 16) {
+                A1 = (dataMatrix[0]);
+                B1 = (dataMatrix[1]);
+                C1 = (dataMatrix[2]);
+                D1 = (dataMatrix[3]); 
+                A2 = (dataMatrix[4]);
+                B2 = (dataMatrix[5]);
+                C2 = (dataMatrix[6]);
+                D2 = (dataMatrix[7]);
+                A3 = (dataMatrix[8]);
+                B3 = (dataMatrix[9]);
+                C3 = (dataMatrix[10]);
+                D3 = (dataMatrix[11]);
+                A4 = (dataMatrix[12]);
+                B4 = (dataMatrix[13]);
+                C4 = (dataMatrix[14]);
+                D4 = (dataMatrix[15]); 
+                j = 0;
+            }            
+            GUI.jLabel133.setText(A1);
+            GUI.jLabel134.setText(B1);
+            GUI.jLabel135.setText(C1);
+            GUI.jLabel136.setText(D1);
+            GUI.jLabel137.setText(A2);
+            GUI.jLabel138.setText(B2);
+            GUI.jLabel139.setText(C2);
+            GUI.jLabel140.setText(D2);
+            GUI.jLabel141.setText(A3);
+            GUI.jLabel142.setText(B3);
+            GUI.jLabel143.setText(C3);
+            GUI.jLabel144.setText(D3);
+            GUI.jLabel145.setText(A4);
+            GUI.jLabel146.setText(B4);
+            GUI.jLabel147.setText(C4);
+            GUI.jLabel148.setText(D4);
+        }
+    }
+    
+    
     public static void scanDataHasil(String x) {
         int k = 0;
         int j = 0;
