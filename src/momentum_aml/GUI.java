@@ -1265,7 +1265,7 @@ public int indexnama=1;
 
             },
             new String [] {
-                "No", "Epoch", "Hidden Layer", "Learning Rate", "Momentum", "MSE", "Waktu", "Status", "Memorisasi", "Generalisasi"
+                "No", "Epoch", "Hidden Layer", "Learning Rate", "Momentum", "Waktu", "Presisi", "Sensitivitas", "Spesifisitas", "Akurasi"
             }
         ));
         tabelHasil.setEnabled(false);
@@ -1952,6 +1952,7 @@ public int indexnama=1;
                         System.out.println("Selamat Datang di Aplikasi Pelatihan & Pengujian \nuntuk Klasifikasi AML: M1, M2 & M3\ndengan Momentum Backpropagation");
                         System.out.println("================================================");
                         
+                        GUIhandler.scanDataHasil(DBConnector.dataHasil());
                         jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("gambar/Asal/Asal (1).jpg"))); 
                         jButton2.setEnabled(false);   
  

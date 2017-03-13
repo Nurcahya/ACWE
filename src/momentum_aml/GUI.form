@@ -2208,11 +2208,11 @@
                         <Column editable="true" title="Hidden Layer" type="java.lang.Object"/>
                         <Column editable="true" title="Learning Rate" type="java.lang.Object"/>
                         <Column editable="true" title="Momentum" type="java.lang.Object"/>
-                        <Column editable="true" title="MSE" type="java.lang.Object"/>
                         <Column editable="true" title="Waktu" type="java.lang.Object"/>
-                        <Column editable="true" title="Status" type="java.lang.Object"/>
-                        <Column editable="true" title="Memorisasi" type="java.lang.Object"/>
-                        <Column editable="true" title="Generalisasi" type="java.lang.Object"/>
+                        <Column editable="true" title="Presisi" type="java.lang.Object"/>
+                        <Column editable="true" title="Sensitivitas" type="java.lang.Object"/>
+                        <Column editable="true" title="Spesifisitas" type="java.lang.Object"/>
+                        <Column editable="true" title="Akurasi" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

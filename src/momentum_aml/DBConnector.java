@@ -45,18 +45,18 @@ public class DBConnector {
         }
         String data = "";
         try {
-            String sql = "SELECT * FROM hasil";
+            String sql = "SELECT * FROM t_uji";
             ResultSet rs = exe.executeQuery(sql);
             while (rs.next()) {
                 data = data + rs.getString("epoch") + "$*$"
-                        + rs.getString("hidden_layer") + "$*$"
-                        + rs.getString("learning_rate") + "$*$"
+                        + rs.getString("hid_layer") + "$*$"
+                        + rs.getString("learn_rate") + "$*$"
                         + rs.getString("momentum") + "$*$"
-                        + rs.getString("MSE") + "$*$"
                         + rs.getString("waktu") + "$*$"
-                        + rs.getString("status") + "$*$"
-                        + rs.getString("memorisasi") + "$*$"
-                        + rs.getString("generalisasi") + "$*$";
+                        + rs.getString("presisi") + "$*$"
+                        + rs.getString("sensitifitas") + "$*$"
+                        + rs.getString("spesifisitas") + "$*$"
+                        + rs.getString("akurasi") + "$*$";
             }
         } catch (Exception e) {
             e.printStackTrace();

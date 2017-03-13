@@ -97,13 +97,13 @@ public class GUIhandler implements ActionListener {
                 String hidden_layer = (dataHasil[1]);
                 String learning_rate = (dataHasil[2]);
                 String momentum = (dataHasil[3]);
-                String MSE = (dataHasil[4]);
-                String waktu = (dataHasil[5]);
-                String status = (dataHasil[6]);
-                String memorisasi = (dataHasil[7]);
-                String generalisasi = (dataHasil[8]);
+                String waktu = (dataHasil[4]);
+                String presisi = (dataHasil[5]);
+                String sensitivitas = (dataHasil[6]);
+                String spesifisitas = (dataHasil[7]);
+                String akurasi = (dataHasil[8]);
 
-                String data[] = {No, epoch, hidden_layer, learning_rate, momentum, MSE, waktu, status, memorisasi, generalisasi};
+                String data[] = {No, epoch, hidden_layer, learning_rate, momentum, waktu, presisi, sensitivitas, spesifisitas, akurasi};
                 tabMode3.addRow(data);
                 j = 0;
             }
