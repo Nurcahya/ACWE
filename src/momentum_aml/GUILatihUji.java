@@ -163,16 +163,16 @@ public class GUILatihUji {
                             }
                              String klasifikasi="empty";
                             if (target == output[0]){
-                            klasifikasi = "myel";
+                            klasifikasi = "myeloblast";
                             }
                             else if (target == output[1]){
-                            klasifikasi = "pro";
+                            klasifikasi = "promyelosit";
                             }
                             else if (target == output[2]){
-                            klasifikasi = "mono";
+                            klasifikasi = "monosit";
                             }
                             else if (target == output[3]){
-                            klasifikasi = "non";
+                            klasifikasi = "non-blast";
                             }
 
                            // System.out.println(NamaObj+" "+NamaCitra+"Hasilnya : "+inputs[0]+" "+inputs[1]+" "+inputs[2]+" "+inputs[3]+ " "+inputs[4]+ ""+inputs[5]+ "("+Jenis+") = "+output[0]+" "+output[1]+" "+output[2]+" ("+jenismemorisasi+")");
@@ -181,22 +181,22 @@ public class GUILatihUji {
                             } catch (SQLException ex) {
                                 Logger.getLogger(GUILatihUji.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                            if (tipe.equals("myeloblast")&&klasifikasi.equals("myel")){ TP1 = TP1+1;  }
-                            if(!tipe.equals("myeloblast")&&klasifikasi.equals("myel")){ FP1 = FP1+1;  }
-                            if(tipe.equals("myeloblast")&&!klasifikasi.equals("myel")){ FN1 = FN1+1;  }
-                            if(!tipe.equals("myeloblast")&&!klasifikasi.equals("myel")){ TN1 = TN1+1;  }
-                            if (tipe.equals("promyelosit")&&klasifikasi.equals("pro")){ TP2 = TP2+1;  }
-                            if(!tipe.equals("promyelosit")&&klasifikasi.equals("pro")){ FP2 = FP2+1;  }
-                            if(tipe.equals("promyelosit")&&!klasifikasi.equals("pro")){ FN2 = FN2+1;  }
-                            if(!tipe.equals("promyelosit")&&!klasifikasi.equals("pro")){ TN2 = TN2+1;  }
-                            if (tipe.equals("monosit")&&klasifikasi.equals("mono")){ TP3 = TP3+1;  }
-                            if(!tipe.equals("monosit")&&klasifikasi.equals("mono")){ FP3 = FP3+1;  }
-                            if(tipe.equals("monosit")&&!klasifikasi.equals("mono")){ FN3 = FN3+1;  }
-                            if(!tipe.equals("monosit")&&!klasifikasi.equals("mono")){ TN3 = TN3+1;  }
-                            if (tipe.equals("non-blast")&&klasifikasi.equals("non")){ TP4 = TP4+1;  }
-                            if(!tipe.equals("non-blast")&&klasifikasi.equals("non")){ FP4 = FP4+1;  }
-                            if(tipe.equals("non-blast")&&!klasifikasi.equals("non")){ FN4 = FN4+1;  }
-                            if(!tipe.equals("non-blast")&&!klasifikasi.equals("non")){ TN4 = TN4+1;  }
+                            if (tipe.equals("myeloblast")&&klasifikasi.equals("myeloblast")){ TP1 = TP1+1;  }
+                            if(!tipe.equals("myeloblast")&&klasifikasi.equals("myeloblast")){ FP1 = FP1+1;  }
+                            if(tipe.equals("myeloblast")&&!klasifikasi.equals("myeloblast")){ FN1 = FN1+1;  }
+                            if(!tipe.equals("myeloblast")&&!klasifikasi.equals("myeloblast")){ TN1 = TN1+1;  }
+                            if (tipe.equals("promyelosit")&&klasifikasi.equals("promyelosit")){ TP2 = TP2+1;  }
+                            if(!tipe.equals("promyelosit")&&klasifikasi.equals("promyelosit")){ FP2 = FP2+1;  }
+                            if(tipe.equals("promyelosit")&&!klasifikasi.equals("promyelosit")){ FN2 = FN2+1;  }
+                            if(!tipe.equals("promyelosit")&&!klasifikasi.equals("promyelosit")){ TN2 = TN2+1;  }
+                            if (tipe.equals("monosit")&&klasifikasi.equals("monosit")){ TP3 = TP3+1;  }
+                            if(!tipe.equals("monosit")&&klasifikasi.equals("monosit")){ FP3 = FP3+1;  }
+                            if(tipe.equals("monosit")&&!klasifikasi.equals("monosit")){ FN3 = FN3+1;  }
+                            if(!tipe.equals("monosit")&&!klasifikasi.equals("monosit")){ TN3 = TN3+1;  }
+                            if (tipe.equals("non-blast")&&klasifikasi.equals("non-blast")){ TP4 = TP4+1;  }
+                            if(!tipe.equals("non-blast")&&klasifikasi.equals("non-blast")){ FP4 = FP4+1;  }
+                            if(tipe.equals("non-blast")&&!klasifikasi.equals("non-blast")){ FN4 = FN4+1;  }
+                            if(!tipe.equals("non-blast")&&!klasifikasi.equals("non-blast")){ TN4 = TN4+1;  }
                             jml = jml+1;
 
                         }
@@ -296,16 +296,16 @@ public class GUILatihUji {
                             }
                               String klasifikasi="empty";
                             if (target == output[0]){
-                            klasifikasi = "myel";
+                            klasifikasi = "myeloblast";
                             }
                             else if (target == output[1]){
-                            klasifikasi = "pro";
+                            klasifikasi = "promyelosit";
                             }
                             else if (target == output[2]){
-                            klasifikasi = "mono";
+                            klasifikasi = "monosit";
                             }
                             else if (target == output[3]){
-                            klasifikasi = "non";
+                            klasifikasi = "non-blast";
                             }
 
                             //System.out.println(NamaObj+" "+NamaCitra+"Hasilnya : "+inputs[0]+" "+inputs[1]+" "+inputs[2]+" "+inputs[3]+ " "+inputs[4]+ ""+inputs[5]+ "("+Jenis+") = "+output[0]+" "+output[1]+" "+output[2]+" ("+jenismemorisasi+")");
@@ -315,22 +315,22 @@ public class GUILatihUji {
                                 Logger.getLogger(GUILatihUji.class.getName()).log(Level.SEVERE, null, ex);
                             }
                             
-                            if (tipe.equals("myeloblast")&&klasifikasi.equals("myel")){ TP1 = TP1+1;  }
-                            if(!tipe.equals("myeloblast")&&klasifikasi.equals("myel")){ FP1 = FP1+1;  }
-                            if(tipe.equals("myeloblast")&&!klasifikasi.equals("myel")){ FN1 = FN1+1;  }
-                            if(!tipe.equals("myeloblast")&&!klasifikasi.equals("myel")){ TN1 = TN1+1;  }
-                            if (tipe.equals("promyelosit")&&klasifikasi.equals("pro")){ TP2 = TP2+1;  }
-                            if(!tipe.equals("promyelosit")&&klasifikasi.equals("pro")){ FP2 = FP2+1;  }
-                            if(tipe.equals("promyelosit")&&!klasifikasi.equals("pro")){ FN2 = FN2+1;  }
-                            if(!tipe.equals("promyelosit")&&!klasifikasi.equals("pro")){ TN2 = TN2+1;  }
-                            if (tipe.equals("monosit")&&klasifikasi.equals("mono")){ TP3 = TP3+1;  }
-                            if(!tipe.equals("monosit")&&klasifikasi.equals("mono")){ FP3 = FP3+1;  }
-                            if(tipe.equals("monosit")&&!klasifikasi.equals("mono")){ FN3 = FN3+1;  }
-                            if(!tipe.equals("monosit")&&!klasifikasi.equals("mono")){ TN3 = TN3+1;  }
-                            if (tipe.equals("non-blast")&&klasifikasi.equals("non")){ TP4 = TP4+1;  }
-                            if(!tipe.equals("non-blast")&&klasifikasi.equals("non")){ FP4 = FP4+1;  }
-                            if(tipe.equals("non-blast")&&!klasifikasi.equals("non")){ FN4 = FN4+1;  }
-                            if(!tipe.equals("non-blast")&&!klasifikasi.equals("non")){ TN4 = TN4+1;  }
+                            if (tipe.equals("myeloblast")&&klasifikasi.equals("myeloblast")){ TP1 = TP1+1;  }
+                            if(!tipe.equals("myeloblast")&&klasifikasi.equals("myeloblast")){ FP1 = FP1+1;  }
+                            if(tipe.equals("myeloblast")&&!klasifikasi.equals("myeloblast")){ FN1 = FN1+1;  }
+                            if(!tipe.equals("myeloblast")&&!klasifikasi.equals("myeloblast")){ TN1 = TN1+1;  }
+                            if (tipe.equals("promyelosit")&&klasifikasi.equals("promyelosit")){ TP2 = TP2+1;  }
+                            if(!tipe.equals("promyelosit")&&klasifikasi.equals("promyelosit")){ FP2 = FP2+1;  }
+                            if(tipe.equals("promyelosit")&&!klasifikasi.equals("promyelosit")){ FN2 = FN2+1;  }
+                            if(!tipe.equals("promyelosit")&&!klasifikasi.equals("promyelosit")){ TN2 = TN2+1;  }
+                            if (tipe.equals("monosit")&&klasifikasi.equals("monosit")){ TP3 = TP3+1;  }
+                            if(!tipe.equals("monosit")&&klasifikasi.equals("monosit")){ FP3 = FP3+1;  }
+                            if(tipe.equals("monosit")&&!klasifikasi.equals("monosit")){ FN3 = FN3+1;  }
+                            if(!tipe.equals("monosit")&&!klasifikasi.equals("monosit")){ TN3 = TN3+1;  }
+                            if (tipe.equals("non-blast")&&klasifikasi.equals("non-blast")){ TP4 = TP4+1;  }
+                            if(!tipe.equals("non-blast")&&klasifikasi.equals("non-blast")){ FP4 = FP4+1;  }
+                            if(tipe.equals("non-blast")&&!klasifikasi.equals("non-blast")){ FN4 = FN4+1;  }
+                            if(!tipe.equals("non-blast")&&!klasifikasi.equals("non-blast")){ TN4 = TN4+1;  }
                             jml = jml+1;
 
                         }
@@ -431,16 +431,16 @@ public class GUILatihUji {
                             }
                             String klasifikasi="empty";
                             if (target == output[0]){
-                            klasifikasi = "myel";
+                            klasifikasi = "myeloblast";
                             }
                             else if (target == output[1]){
-                            klasifikasi = "pro";
+                            klasifikasi = "promyelosit";
                             }
                             else if (target == output[2]){
-                            klasifikasi = "mono";
+                            klasifikasi = "monosit";
                             }
                             else if (target == output[3]){
-                            klasifikasi = "non";
+                            klasifikasi = "non-blast";
                             }
 
                             //System.out.println(NamaObj+" "+NamaCitra+"Hasilnya : "+inputs[0]+" "+inputs[1]+" "+inputs[2]+" "+inputs[3]+ " "+inputs[4]+ ""+inputs[5]+ "("+Jenis+") = "+output[0]+" "+output[1]+" "+output[2]+" ("+jenismemorisasi+")");
@@ -449,22 +449,22 @@ public class GUILatihUji {
                             } catch (SQLException ex) {
                                 Logger.getLogger(GUILatihUji.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                                if (tipe.equals("myeloblast")&&klasifikasi.equals("myel")){ TP1 = TP1+1;  }
-                            if(!tipe.equals("myeloblast")&&klasifikasi.equals("myel")){ FP1 = FP1+1;  }
-                            if(tipe.equals("myeloblast")&&!klasifikasi.equals("myel")){ FN1 = FN1+1;  }
-                            if(!tipe.equals("myeloblast")&&!klasifikasi.equals("myel")){ TN1 = TN1+1;  }
-                            if (tipe.equals("promyelosit")&&klasifikasi.equals("pro")){ TP2 = TP2+1;  }
-                            if(!tipe.equals("promyelosit")&&klasifikasi.equals("pro")){ FP2 = FP2+1;  }
-                            if(tipe.equals("promyelosit")&&!klasifikasi.equals("pro")){ FN2 = FN2+1;  }
-                            if(!tipe.equals("promyelosit")&&!klasifikasi.equals("pro")){ TN2 = TN2+1;  }
-                            if (tipe.equals("monosit")&&klasifikasi.equals("mono")){ TP3 = TP3+1;  }
-                            if(!tipe.equals("monosit")&&klasifikasi.equals("mono")){ FP3 = FP3+1;  }
-                            if(tipe.equals("monosit")&&!klasifikasi.equals("mono")){ FN3 = FN3+1;  }
-                            if(!tipe.equals("monosit")&&!klasifikasi.equals("mono")){ TN3 = TN3+1;  }
-                            if (tipe.equals("non-blast")&&klasifikasi.equals("non")){ TP4 = TP4+1;  }
-                            if(!tipe.equals("non-blast")&&klasifikasi.equals("non")){ FP4 = FP4+1;  }
-                            if(tipe.equals("non-blast")&&!klasifikasi.equals("non")){ FN4 = FN4+1;  }
-                            if(!tipe.equals("non-blast")&&!klasifikasi.equals("non")){ TN4 = TN4+1;  }
+                                if (tipe.equals("myeloblast")&&klasifikasi.equals("myeloblast")){ TP1 = TP1+1;  }
+                            if(!tipe.equals("myeloblast")&&klasifikasi.equals("myeloblast")){ FP1 = FP1+1;  }
+                            if(tipe.equals("myeloblast")&&!klasifikasi.equals("myeloblast")){ FN1 = FN1+1;  }
+                            if(!tipe.equals("myeloblast")&&!klasifikasi.equals("myeloblast")){ TN1 = TN1+1;  }
+                            if (tipe.equals("promyelosit")&&klasifikasi.equals("promyelosit")){ TP2 = TP2+1;  }
+                            if(!tipe.equals("promyelosit")&&klasifikasi.equals("promyelosit")){ FP2 = FP2+1;  }
+                            if(tipe.equals("promyelosit")&&!klasifikasi.equals("promyelosit")){ FN2 = FN2+1;  }
+                            if(!tipe.equals("promyelosit")&&!klasifikasi.equals("promyelosit")){ TN2 = TN2+1;  }
+                            if (tipe.equals("monosit")&&klasifikasi.equals("monosit")){ TP3 = TP3+1;  }
+                            if(!tipe.equals("monosit")&&klasifikasi.equals("monosit")){ FP3 = FP3+1;  }
+                            if(tipe.equals("monosit")&&!klasifikasi.equals("monosit")){ FN3 = FN3+1;  }
+                            if(!tipe.equals("monosit")&&!klasifikasi.equals("monosit")){ TN3 = TN3+1;  }
+                            if (tipe.equals("non-blast")&&klasifikasi.equals("non-blast")){ TP4 = TP4+1;  }
+                            if(!tipe.equals("non-blast")&&klasifikasi.equals("non-blast")){ FP4 = FP4+1;  }
+                            if(tipe.equals("non-blast")&&!klasifikasi.equals("non-blast")){ FN4 = FN4+1;  }
+                            if(!tipe.equals("non-blast")&&!klasifikasi.equals("non-blast")){ TN4 = TN4+1;  }
                             jml = jml+1;
 
                         }
